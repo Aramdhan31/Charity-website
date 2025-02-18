@@ -1,30 +1,28 @@
-/* style.css */
+/* style.css (Home Page - Enhanced) */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: #333;
-    background-color: #f8f8f8; /* Softer background color */
+    background-color: #f8f8f8;
 }
 
-header {
-    background-color: #fff; /* White header background */
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
+/* Navigation */
 nav {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo a {
-    font-weight: bold;
-    font-size: 1.2em;
+    font-weight: 700; /* Bold logo */
+    font-size: 1.4em;
+    color: #007bff; /* Blue logo */
     text-decoration: none;
-    color: #333;
 }
 
 nav ul {
@@ -42,54 +40,61 @@ nav a {
     text-decoration: none;
     color: #333;
     transition: color 0.3s ease;
+    padding: 8px 12px; /* Add some padding around links */
+    border-radius: 5px; /* Rounded corners for links */
 }
 
 nav a:hover {
     color: #007bff;
 }
 
+
+
+/* Hero Section */
 .hero {
-    text-align: center;
-    padding: 100px 0;
     background-image: url('hero-image.jpg'); /* Replace with your hero image */
     background-size: cover;
     background-position: center;
     color: white;
-    position: relative; /* For overlay */
+    text-align: center;
+    padding: 150px 0; /* Increased padding */
+    position: relative;
 }
 
-.hero::before { /* Semi-transparent overlay */
+.hero::before { /* Dark overlay for better text contrast */
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
 }
 
-.hero * { /* Ensure content is above overlay */
+.hero * {
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Bring text above overlay */
 }
 
 .hero h1 {
-    font-size: 2.5em;
+    font-size: 3em; /* Larger heading */
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .hero p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+    font-size: 1.4em;
+    margin-bottom: 40px;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 24px; /* Larger button */
     background-color: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 1.2em;
     transition: background-color 0.3s ease;
 }
 
@@ -97,56 +102,71 @@ nav a:hover {
     background-color: #0056b3;
 }
 
-.about-us, .what-we-do, .get-involved {
-    padding: 40px;
+/* Home Sections */
+.home-about-charity, .home-event-preview {
+    padding: 60px; /* Increased padding */
     text-align: center;
-    background-color: #fff; /* White sections */
-    margin-bottom: 20px; /* Spacing between sections */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+    border-radius: 8px; /* Rounded corners for sections */
 }
 
-.about-us img {
-    max-width: 50%;
+.home-about-charity h2, .home-event-preview h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007bff; /* Blue headings */
+}
+
+.home-about-charity img, .home-event-preview img {
+    max-width: 70%; /* Adjust as needed */
     height: auto;
-    margin-top: 20px;
-    border-radius: 8px; /* Rounded corners for image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Image shadow */
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
     margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.12); /* More prominent shadow */
+    transition: transform 0.2s ease; /* Hover effect */
+
 }
 
-.service {
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #f0f0f0; /* Light background for service boxes */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
+.home-about-charity img:hover, .home-event-preview img:hover {
+    transform: scale(1.02); /* Scale up slightly on hover */
 }
 
-.service img { /* Style for service icons */
-    max-width: 80px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.service:hover {
-    transform: translateY(-5px); /* Move up slightly on hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
-}
-
-
+/* Footer */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
+    font-size: 0.9em;
 }
 
-/* Responsive adjustments */
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    /* ... (responsive styles remain the same) */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .home-about-charity img, .home-event-preview img {
+        max-width: 90%;
+    }
 }

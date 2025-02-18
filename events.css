@@ -1,0 +1,42 @@
+/* style.css (Relevant styles for event.html) */
+/* ... (General styles from index.html CSS) ... */
+
+.event-details img {
+    max-width: 80%;
+    height: auto;
+    margin: 20px auto; /* Center the image */
+    display: block; /* Make the image a block element for centering */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-info {
+    padding: 40px;
+    text-align: left; /* Align text to the left */
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.event-info ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.event-highlights {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Distribute highlights evenly */
+    padding: 40px;
+    background-color: #f8f8f8;
+}
+
+.highlight {
+    text-align: center;
+    width: 30%; /* Adjust width as needed */
+}
+
+.highlight img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
